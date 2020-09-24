@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucureștiul în culori</title>
+    <link rel="stylesheet" href="./Resources/css/style.css" type="text/css">
+    <link rel="icon" href="./Resources/imgs/Bucuresti_Colorat.png" type="image/icon type">
+</head>
+
+<body>
+
+  <div id="content">
+
+    <h1>Bucureștiul în culori </h1>
+    <p>Bucureștiul, asemenea multor orașe din România, este văzut ca un oraș predominant gri și mohorât.</p>
+    <p>De aceea, am hotărât să-l colorăm noi în viile culori ale curcubeului.</p>
+  
+  </div>
+
+  <div id="map"></div>
+
+<!-- Interactive Google Maps -->
+<script>
+
+  function initMap() {
+    var bucharest = {lat: 44.439663, lng: 26.096306};
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10.7, center: bucharest});
+
+    // Define the LatLng coordinates for the Sector1 path.
+    var sector1Coords = [
+              {lng: 26.1045831, lat: 44.5390806},
+              {lng: 26.0671609, lat: 44.5349204},
+              {lng: 26.010856,  lat: 44.5155836},
+              {lng: 26.0063928, lat: 44.5028521},
+              {lng: 25.9878534, lat: 44.4918323},
+              {lng: 25.9785836, lat: 44.4705212},
+              {lng: 25.9967798, lat: 44.4795855},
+              {lng: 26.0616678, lat: 44.4550843},
+              {lng: 26.0881036, lat: 44.4344953},
+              {lng: 26.1059564, lat: 44.4367016},
+              {lng: 26.1045831, lat: 44.5390806}
+      ];
+ // Construct the polygon for Sector1.
+    var sector1 = new google.maps.Polygon({
+      paths: sector1Coords,
+      strokeColor: 'black',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.5
+  });
+  sector1.setMap(map);
+
+// Define the LatLng coordinates for the Sector2 path. 
+    var sector2Coords = [
+              {lng: 26.1052644, lat: 44.4883766},
+              {lng: 26.1836332, lat: 44.4793405},
+              {lng: 26.1662926, lat: 44.4672132},
+              {lng: 26.1565107, lat: 44.4550843},
+              {lng: 26.1987394, lat: 44.4423396},
+              {lng: 26.1513608, lat: 44.4384176},
+              {lng: 26.1059564, lat: 44.4367016}
+      ];
+ // Construct the polygon for Sector2.
+    var sector2 = new google.maps.Polygon({
+      paths: sector2Coords,
+      strokeColor: 'black',
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      fillColor: '#ffa500',
+      fillOpacity: 0.5
+  });
+  sector2.setMap(map);
+
+// Define the LatLng coordinates for the Sector3 path. 
+    var sector3Coords = [
+                {lng: 26.1059564, lat: 44.4367016}, 
+                {lng: 26.0881036, lat: 44.4344953}, 
+                {lng: 26.0897263, lat: 44.4309005}, 
+                {lng: 26.1034592, lat: 44.4309005}, 
+                {lng: 26.1058783, lat: 44.4276845}, 
+                {lng: 26.1082657, lat: 44.4245259}, 
+                {lng: 26.1240586, lat: 44.4082184}, 
+                {lng: 26.1506091, lat: 44.4008838}, 
+                {lng: 26.1771019, lat: 44.3935009}, 
+                {lng: 26.2133225, lat: 44.3952181}, 
+                {lng: 26.207486, lat: 44.4015959}, 
+                {lng: 26.2148675, lat: 44.4044167}, 
+                {lng: 26.2256821, lat: 44.4333521}, 
+                {lng: 26.1987394, lat: 44.4423396}, 
+                {lng: 26.1502369, lat: 44.4383163}, 
+                {lng: 26.1059564, lat: 44.4367016}   
+      ];
+ // Construct the polygon for Sector3.
+    var sector3 = new google.maps.Polygon({
+      paths: sector3Coords,
+      strokeColor: 'black',
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      fillColor: '#ffff00',
+      fillOpacity: 0.5
+  });
+  sector3.setMap(map);
+
+// Define the LatLng coordinates for the Sector4 path. 
+    var sector4Coords = [
+                {lng: 26.1692855, lat: 44.3956793}, 
+                {lng: 26.1468084, lat: 44.401939}, 
+                {lng: 26.1354778, lat: 44.4050634}, 
+                {lng: 26.1298551, lat: 44.4066558}, 
+                {lng: 26.1240586, lat: 44.4082184}, 
+                {lng: 26.1082657, lat: 44.4245259}, 
+                {lng: 26.1059494, lat: 44.42759}, 
+                {lng: 26.1034592, lat: 44.4309005}, 
+                {lng: 26.0857226, lat: 44.4188605}, 
+                {lng: 26.0980982, lat: 44.3997652}, 
+                {lng: 26.0881419, lat: 44.3663957}, 
+                {lng: 26.1197274, lat: 44.3551047}, 
+                {lng: 26.1514844, lat: 44.3354629}, 
+                {lng: 26.1686505, lat: 44.3418472}, 
+                {lng: 26.1650456, lat: 44.3470032}, 
+                {lng: 26.1612691, lat: 44.3457756}, 
+                {lng: 26.1416998, lat: 44.3704452}, 
+                {lng: 26.1692855, lat: 44.3956793}
+      ];
+ // Construct the polygon for Sector4.
+    var sector4 = new google.maps.Polygon({
+      paths: sector4Coords,
+      strokeColor: 'black',
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      fillColor: ' #00ff00',
+      fillOpacity: 0.5
+  });
+  sector4.setMap(map);
+
+// Define the LatLng coordinates for the Sector5 path. 
+    var sector5Coords = [
+                {lng: 26.1034592, lat: 44.4309005},
+                {lng: 26.0897263, lat: 44.4309005},
+                {lng: 26.088915, lat: 44.4326977},
+                {lng: 26.0881036, lat: 44.4344953},
+                {lng: 26.0872222, lat: 44.4351834},
+                {lng: 26.0863415, lat: 44.4358691},
+                {lng: 26.0845968, lat: 44.4372281},
+                {lng: 26.0767629, lat: 44.4373036},
+                {lng: 26.0729863, lat: 44.4236969},
+                {lng: 26.0463788, lat: 44.4109453},
+                {lng: 26.0366954, lat: 44.4108512},
+                {lng: 26.027012, lat: 44.4107582},
+                {lng: 26.0224623, lat: 44.4107116},
+                {lng: 26.0179005, lat: 44.4106677},
+                {lng: 26.008785, lat: 44.4105775},
+                {lng: 26.0348615, lat: 44.3835901},
+                {lng: 26.08876, lat: 44.3684683},
+                {lng: 26.0980982, lat: 44.3997652},
+                {lng: 26.0857226, lat: 44.4188605},
+                {lng: 26.1034592, lat: 44.4309005}
+      ];
+// Construct the polygon for Sector5.
+    var sector5 = new google.maps.Polygon({
+      paths: sector5Coords,
+      strokeColor: 'black',
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      fillColor: '#0000ff',
+      fillOpacity: 0.5
+  });
+sector5.setMap(map);
+
+// Define the LatLng coordinates for the Sector6 path. 
+    var sector6Coords = [
+                {lng: 25.9967798, lat: 44.4795855},
+                {lng: 25.9785836, lat: 44.4705212},
+                {lng: 25.9722638, lat: 44.4635656},
+                {lng: 26.0151792, lat: 44.4556017},
+                {lng: 26.019814, lat: 44.4466562},
+                {lng: 26.0103727, lat: 44.4428571},
+                {lng: 25.9662557, lat: 44.4423668},
+                {lng: 25.9684873, lat: 44.416256},
+                {lng: 25.9760404, lat: 44.4059556},
+                {lng: 25.9880998, lat: 44.4070826},
+                {lng: 26.008785, lat: 44.4105775},
+                {lng: 26.0463788, lat: 44.4109453},
+                {lng: 26.0729863, lat: 44.4236969},
+                {lng: 26.0767629, lat: 44.4373036},
+                {lng: 26.0845968, lat: 44.4372281},
+                {lng: 26.0616678, lat: 44.4550843},
+                {lng: 25.9967798, lat: 44.4795855}
+    ];
+// Construct the polygon for Sector6.
+    var sector6 = new google.maps.Polygon({
+      paths: sector6Coords,
+      strokeColor: 'black',
+      strokeOpacity: 1,
+      strokeWeight: 2 ,
+      fillColor: '#4b0082',
+      fillOpacity: 0.5
+  });
+sector6.setMap(map);
+
+}
+
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBen83X-zPTHaIfNVoqUMKwejiwGAiYZo8&callback=initMap">
+  </script>
+
+<!--Profile section-->
+
+        <div id="flex_container">
+            <figure>
+                <img src="./Resources/imgs/img.jpg" alt=" at Nexus Gamers Pub" height="250px" width="250px">
+            </figure> 
+
+        <ul id="list">
+            <li id="profil">Profilul meu</li>
+            <li>
+              <span>
+                <label>Nume:</label>
+                  Neculai Alina
+              </span>
+            </li>
+            <li>
+              <span>
+                <label>Email:</label>
+                  alinaneculai19@gmail.com
+            </span>
+          </li>
+            <li>
+              <span>
+                <label>Telefon:</label>
+                   0774492617
+              </span>
+          </li>
+          <li>
+            <span>
+              <label>Varsta:</label>
+                25
+            </span>
+          </li>
+        </ul>     
+    </div>
+
+    <div id="text">
+        <p>Sunt o persoana motivata si pasionata de tehnologie si  gaming. Imi doresc mereu sa invat lucruri noi si imi plac jocurile pe PC/consola (am inclus o mostra de gameplay in profil 😊). Am decis sa imbin placerea de a crea lucruri cu un design reusit cu pasiunea pentru tehnologie si in acest moment 100% din timpul petrecut este dedicat invatarii de web development.</p>
+    </div>
+    <div id="movies">
+        <video src="./Resources/video/widow.mov" width="500" height="300" controls></video>
+        <video  src="./Resources/video/luckygirl's highlight reaper2.MOV" width="500" height="300" controls></video>
+    </div>
+</body>
+</html>
